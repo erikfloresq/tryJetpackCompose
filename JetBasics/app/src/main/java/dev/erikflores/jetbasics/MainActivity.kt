@@ -56,6 +56,9 @@ fun LabScreen(name: String) {
         MyButton()
         MyRadioButton()
         MyFloatingActionButton()
+        LoaderCircular()
+        LoaderProgress()
+        ShowAlertDialog()
     }
 }
 
@@ -148,6 +151,42 @@ fun MyFloatingActionButton() {
         onClick = {}
     ) {
         Icon(Icons.Filled.Favorite, "")
+    }
+}
+
+@Composable
+fun LoaderCircular() {
+    CircularProgressIndicator(
+        color = colorResource(id = R.color.purple_500),
+        strokeWidth = 5.dp
+    )
+}
+
+@Composable
+fun LoaderProgress() {
+    LinearProgressIndicator(
+        color = colorResource(id = R.color.purple_500),
+        progress = 0.5f
+    )
+}
+
+@Composable
+fun ShowAlertDialog() {
+    var shouldShowDialog = remember { mutableStateOf(false) }
+
+    if (shouldShowDialog.value) {
+        AlertDialog(
+            onDismissRequest = {
+                shouldShowDialog.value = false
+            },
+            title = { Text("Demo") },
+            text = { Text("programamos algo?") },
+            confirmButton = {
+                Button(onClick = { }) {
+                    Text("OK")
+                }
+            }
+        )
     }
 }
 
