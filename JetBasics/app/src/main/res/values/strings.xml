@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">JetBasics</string>
+    <string name="name_form">Name</string>
+    <string name="email_form">Email</string>
 </resources>
