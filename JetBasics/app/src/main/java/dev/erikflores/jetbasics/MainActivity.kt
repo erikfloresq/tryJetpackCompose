@@ -36,10 +36,23 @@ class MainActivity : ComponentActivity() {
             JetBasicsTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    LabScreen("Android")
+                    LayoutScreen()
                 }
             }
         }
+    }
+}
+
+@Composable
+fun LayoutScreen() {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceEvenly,
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Text("element 1")
+        Text("element 1")
+        Text("element 1")
     }
 }
 
@@ -194,6 +207,6 @@ fun ShowAlertDialog() {
 @Composable
 fun DefaultPreview() {
     JetBasicsTheme {
-        LabScreen("Android")
+        LayoutScreen()
     }
 }
