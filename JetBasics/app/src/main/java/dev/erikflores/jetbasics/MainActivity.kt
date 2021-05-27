@@ -19,6 +19,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Blue
 import androidx.compose.ui.graphics.Color.Companion.Green
 import androidx.compose.ui.graphics.Color.Companion.Yellow
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
@@ -35,10 +36,36 @@ class MainActivity : ComponentActivity() {
         setContent {
             JetBasicsTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    LayoutScreen()
-                }
+//                Surface(color = MaterialTheme.colors.background) {
+//                    SurfaceScreen()
+//                }
+                SurfaceScreen()
             }
+        }
+    }
+}
+
+@Composable
+fun SurfaceScreen(modifier: Modifier = Modifier) {
+    Box(modifier = modifier.fillMaxSize()) {
+        MySurface(modifier = modifier.align(Alignment.Center))
+    }
+}
+
+@Composable
+fun MySurface(modifier: Modifier) {
+    Surface(
+        modifier = modifier.size(100.dp), // 1
+        shape = RectangleShape,
+        color = Color.LightGray, // 2
+        contentColor = colorResource(id = R.color.purple_500), // 2
+        elevation = 5.dp, // 3
+        border = BorderStroke(1.dp, Color.Black) // 4
+    ) {
+        Column() {
+            Text("Erik")
+            Text("Flores")
+            Text("Quispe")
         }
     }
 }
@@ -46,8 +73,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun LayoutScreen() {
     Row(
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceEvenly,
+        verticalAlignment = Alignment.Top,
+        horizontalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier.fillMaxSize()
     ) {
         Text("element 1")
