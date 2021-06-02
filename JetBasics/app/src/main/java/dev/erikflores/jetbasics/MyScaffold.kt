@@ -21,7 +21,7 @@ fun MyScaffold() {
     Scaffold(
         scaffoldState = scaffoldState,
         contentColor = colorResource(id = R.color.purple_500),
-        content = { MyRow() },
+        content = { BooksScreen() },
         topBar = { MyTopAppBar(scaffoldState = scaffoldState, scope = scope) },
         bottomBar = { MyBottomAppBar() },
         drawerContent = { MyColumn() }

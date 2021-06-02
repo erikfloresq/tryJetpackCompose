@@ -3,4 +3,8 @@
     <string name="name_form">Name</string>
     <string name="email_form">Email</string>
     <string name="menu">Menu</string>
+    <string name="book_image">On my way !</string>
+    <string name="kotlin">kotlin</string>
+    <string name="swift">swift</string>
+    <string name="ios">ios</string>
 </resources>
